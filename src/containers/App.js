@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import { setSearchField, requestRobots } from "../actions";
+import { setSearchField, requestRobots } from "../app/actions";
 
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
@@ -24,8 +24,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const App = (props) => {
-  const { searchField, onSearchChange, robots, isPending, onRequestRobots } =
-    props;
+  const { searchField, onSearchChange, robots, isPending, onRequestRobots } = props;
 
   useEffect(() => {
     onRequestRobots();
