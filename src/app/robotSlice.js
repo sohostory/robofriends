@@ -3,7 +3,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const requestRobots = createAsyncThunk("robots/requestRobots", async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
-  console.log(data);
   return data;
 });
 
