@@ -27,7 +27,7 @@ const App = () => {
   ) : (
     <div className="tc">
       <Header />
-      <SearchBox searchChange={onSearchChange} />
+      <SearchBox />
       <Scroll>
         {isPending ? (
           <h1>Loading</h1>
