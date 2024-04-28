@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { requestRobots } from "../app/robotSlice";
 
+import Header from "../components/Header";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
@@ -25,7 +26,7 @@ const App = () => {
     <h1>Loading</h1>
   ) : (
     <div className="tc">
-      <h1 className="f1">RoboFriends</h1>
+      <Header />
       <SearchBox />
       <Scroll>
         {isPending ? (
