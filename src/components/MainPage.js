@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { requestRobots } from "../app/robotSlice";
 
 import Header from "../components/Header";
 import CardList from "../components/CardList";
