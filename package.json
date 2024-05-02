@@ -3,6 +3,13 @@
   "homepage": "https://sohostory.github.io/robofriends",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ]
+  },
   "dependencies": {
     "@reduxjs/toolkit": "~2.2.3",
     "@testing-library/jest-dom": "~6.4.2",
@@ -33,12 +40,13 @@
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "^0.8.0",
     "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "react-scripts": "~5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
