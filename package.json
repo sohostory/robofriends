@@ -31,6 +31,8 @@
     "workbox-streams": "^6.6.0"
   },
   "devDependencies": {
+    "@cfaester/enzyme-adapter-react-18": "^0.8.0",
+    "enzyme": "^3.11.0",
     "react-scripts": "~5.0.1"
   },
   "scripts": {
