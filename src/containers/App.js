@@ -1,12 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { requestRobots } from "../app/robotSlice";
+import MainPage from "../components/MainPage";
 
-import Header from "../components/Header";
-import CardList from "../components/CardList";
-import SearchBox from "../components/SearchBox";
-import Scroll from "../components/Scroll";
-import ErrorBoundary from "../components/ErrorBoundary";
 import "./App.css";
 
 const App = () => {
@@ -19,26 +15,14 @@ const App = () => {
     dispatch(requestRobots());
   }, [dispatch]);
 
-  const filteredRobots = robots.filter((robot) => {
-    return robot.name.toLowerCase().includes(searchField.toLowerCase());
-  });
-  return !robots.length ? (
-    <h1>Loading</h1>
-  ) : (
-    <div className="tc">
-      <Header />
-      <SearchBox />
-      <Scroll>
-        {isPending ? (
-          <h1>Loading</h1>
-        ) : (
-          <ErrorBoundary>
-            <CardList robots={filteredRobots} />;
-          </ErrorBoundary>
-        )}
-      </Scroll>
-    </div>
-  );
+  const onSearchChange = (event) => {
+    dispatch(searchField.setSearchField(event.target.value));
+  };
+  const onRequestRobots = () => {
+    dispatch(requestRobots());
+  };
+
+  return <MainPage {...{ searchField, robots, isPending, onSearchChange, onRequestRobots }} />;
 };
 
 export default App;
