@@ -12,7 +12,7 @@ const MainPage = (props) => {
     props.onRequestRobots();
   }, []);
 
-  const filteredRobots = () => {
+  const filterRobots = () => {
     const { robots, searchField } = props;
     return robots.filter((robot) => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
@@ -27,7 +27,7 @@ const MainPage = (props) => {
           <h1>Loading</h1>
         ) : (
           <ErrorBoundary>
-            <CardList robots={filteredRobots()} />;
+            <CardList robots={filterRobots()} />;
           </ErrorBoundary>
         )}
       </Scroll>
